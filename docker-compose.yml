@@ -2,7 +2,7 @@
 version: '3.5'
 services:
   wetty:
-    image: wetty
+    image: adgsenpai/httpwebos
     build:
       context: .
       dockerfile: containers/wetty/Dockerfile
@@ -23,7 +23,7 @@ services:
     ports:
       - '80:80'
     environment:
-      - NGINX_DOMAIN=wetty.com
+      - NGINX_DOMAIN=adgstudios.co.za
       - NGINX_PORT=80
       - WETTY_HOST=wetty
       - WETTY_PORT=3000
@@ -37,7 +37,7 @@ services:
     build:
       context: .
       dockerfile: containers/ssh/Dockerfile
-    image: wetty:ssh
+    image: adgsenpai/httpwebos:ssh
 
 networks:
   default:
