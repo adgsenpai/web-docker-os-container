@@ -9,7 +9,7 @@ jobs:
       - name: publish
         run: |
           docker login ghcr.io -u adgsenpai -p "${{ secrets.GITHUB_TOKEN }}"
-          docker build -t ghcr.io/weboscontainer .
-          docker push ghcr.io/weboscontainer
+          docker-compose build --pull
+          docker-compose push
           
  
