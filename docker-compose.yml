@@ -2,7 +2,7 @@
 version: '3.5'
 services:
   wetty:
-    image: adgsenpai/httpwebos
+    image: ghcr.io/adgsenpai/httpwebos
     build:
       context: .
       dockerfile: containers/wetty/Dockerfile
@@ -37,7 +37,7 @@ services:
     build:
       context: .
       dockerfile: containers/ssh/Dockerfile
-    image: adgsenpai/httpwebos:ssh
+    image: ghcr.io/adgsenpai/httpwebos:ssh
 
 networks:
   default:
