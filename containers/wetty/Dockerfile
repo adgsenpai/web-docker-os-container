@@ -23,6 +23,8 @@ RUN echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
 RUN adduser adgsenpai wheel
 RUN adduser user wheel
 
+RUN printf 'WELCOME TO THE ADGSTUDIOS WEBOS LAB\n WE HOPE YOU HAVE FUN!' > /etc/motd
+
 COPY --from=builder /usr/src/app/build /usr/src/app/build
 COPY --from=builder /usr/src/app/node_modules /usr/src/app/node_modules
 COPY package.json /usr/src/app
