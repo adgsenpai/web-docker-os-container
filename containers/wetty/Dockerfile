@@ -29,7 +29,7 @@ RUN adduser user wheel
 RUN apk add python3
 RUN apk add py3-pip
 
-RUN printf 'WELCOME TO THE ADGSTUDIOS WEBOS LAB\n WE HOPE YOU HAVE FUN!' > /etc/motd
+RUN printf 'WELCOME TO THE ADGSTUDIOS WEBOS LAB\n WE HOPE YOU HAVE FUN!\n' > /etc/motd
 
 COPY --from=builder /usr/src/app/build /usr/src/app/build
 COPY --from=builder /usr/src/app/node_modules /usr/src/app/node_modules
