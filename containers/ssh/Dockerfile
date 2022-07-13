@@ -1,3 +1,6 @@
+LABEL name="web-os"
+LABEL maintainer="ADGSENPAI"
+
 FROM sickp/alpine-sshd:latest
 RUN adduser -D -h /home/adgsenpai -s /bin/sh adgsenpai && \
     ( echo "adgsenpai:test" | chpasswd )
