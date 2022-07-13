@@ -10,6 +10,6 @@ jobs:
         run: |
           docker login ghcr.io -u adgsenpai -p "${{ secrets.GITHUB_TOKEN }}"
           docker-compose build --pull
-          docker-compose push ghcr.io/adgsenpai/webos:latest
+          docker-compose push ghcr.io/adgsenpai/httpwebos
           
  
