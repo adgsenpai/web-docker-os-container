@@ -9,6 +9,6 @@ jobs:
       - name: publish
         uses: pennsignals/publish_docker-compose@v0.1.0
         with:
-          version: '' # optional
+          version: 'test' # optional
           docker_compose: 'docker-compose.yml' # required
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
