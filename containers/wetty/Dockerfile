@@ -12,6 +12,9 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 EXPOSE 3000
 
+RUN apk update
+RUN apk add make automake gcc g++ subversion python3-dev
+
 RUN apk add sudo
 RUN adduser -D -h /home/adgsenpai -s /bin/sh adgsenpai && \
     ( echo "adgsenpai:test" | chpasswd )
@@ -22,6 +25,9 @@ RUN adduser -D -h /home/user -s /bin/sh user && \
 RUN echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
 RUN adduser adgsenpai wheel
 RUN adduser user wheel
+
+RUN apk add python3
+RUN apk add py3-pip
 
 RUN printf 'WELCOME TO THE ADGSTUDIOS WEBOS LAB\n WE HOPE YOU HAVE FUN!' > /etc/motd
 
