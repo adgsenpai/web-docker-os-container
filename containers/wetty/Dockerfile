@@ -12,11 +12,16 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 EXPOSE 3000
 
+RUN apk add sudo
 RUN adduser -D -h /home/adgsenpai -s /bin/sh adgsenpai && \
     ( echo "adgsenpai:test" | chpasswd )
 
 RUN adduser -D -h /home/user -s /bin/sh user && \
     ( echo "user:user" | chpasswd )
+
+RUN echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
+RUN adduser adgsenpai wheel
+RUN adduser user wheel
 
 COPY --from=builder /usr/src/app/build /usr/src/app/build
 COPY --from=builder /usr/src/app/node_modules /usr/src/app/node_modules
