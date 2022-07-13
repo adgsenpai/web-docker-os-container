@@ -7,6 +7,7 @@ RUN yarn && \
     yarn install --production --ignore-scripts --prefer-offline
 
 FROM node:current-alpine
+LABEL name="web-os"
 LABEL maintainer="ADGSENPAI"
 WORKDIR /usr/src/app
 ENV NODE_ENV=production
