@@ -1,16 +1,5 @@
-version: '3.5'
-services:
-  wetty:
-    image: ghcr.io/adgsenpai/httpwebos
-    build:
-      context: .
-      dockerfile: containers/wetty/Dockerfile
-    entrypoint: yarn docker-compose-entrypoint
-    tty: true
-    working_dir: /usr/src/app
-    ports:
-      - '3000:3000'
-    environment:
-      SSHHOST: 'wetty-ssh'
-      SSHPORT: 22
-      NODE_ENV: 'development'
+build:
+  docker:
+    web: containers/wetty/Dockerfile
+run:
+  web: yarn docker-compose-entrypoint
