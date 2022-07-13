@@ -1,5 +1,8 @@
 build:
   docker:
     web: containers/wetty/Dockerfile
+    working_dir: /usr/src/app
+    ports:
+        - '3000:3000'
 run:
   web: yarn docker-compose-entrypoint
