@@ -2,7 +2,7 @@
 version: '3.5'
 services:
   wetty:
-    image: wettyoss/wetty
+    image: wetty
     build:
       context: .
       dockerfile: containers/wetty/Dockerfile
@@ -37,7 +37,7 @@ services:
     build:
       context: .
       dockerfile: containers/ssh/Dockerfile
-    image: wettyoss/wetty:ssh
+    image: wetty:ssh
 
 networks:
   default:
