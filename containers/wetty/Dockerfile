@@ -26,20 +26,13 @@ RUN echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
 RUN adduser adgsenpai wheel
 RUN adduser user wheel
 
-
-
-
-
 RUN apk add python3
 RUN apk add py3-pip
 RUN apk add bash
 RUN apk add curl
 RUN apk add openssh
-RUN printf '[ -z "$SSH_CLIENT" ] && source <(curl --fail --retry 3 -sSL "$HEROKU_EXEC_URL")' > /etc/profile.d/heroku-exec.sh
 
 RUN printf 'WELCOME TO THE ADGSTUDIOS WEBOS LAB\nWE HOPE YOU HAVE FUN!\n' > /etc/motd
-
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 COPY --from=builder /usr/src/app/build /usr/src/app/build
 COPY --from=builder /usr/src/app/node_modules /usr/src/app/node_modules
